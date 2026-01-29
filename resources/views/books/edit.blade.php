@@ -1,6 +1,14 @@
-<div>
-    <!-- Simplicity is the consequence of refined emotions. - Jean D'Alembert -->
+@extends('layouts.master')
+@section('title', 'Gestion Biblioteca - Edit Book')
+@section('navigation')
+    <x-boton-enlace ruta="{{ route('books.index') }}">Books List</x-boton-enlace>
+    @parent
+@endsection
+
+@Section('header')
     <h1>Edit Book</h1>
+@endsection
+@section('content')
     <form action="{{ route('books.update', $book) }}" method="POST">
         @csrf
         @method('PUT')
@@ -25,4 +33,4 @@
         <br>
         <button type="submit">Update Book</button>
     </form> 
-</div>
+@endsection

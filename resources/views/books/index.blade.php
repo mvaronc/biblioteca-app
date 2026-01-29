@@ -1,7 +1,15 @@
+@extends('layouts.master')
+@section('title', 'Gestion Biblioteca - Books List')
+
 <div>
-    <!-- It is never too late to be what you might have been. - George Eliot -->
+    @section('header')
     <h1>Books List</h1>
+    @endsection
+    @section('navigation')
     <a style="background-color: green; color:white;" href="{{ route('books.create') }}">Add New Book</a>
+   @parent
+   @endsection
+   @section('content')
     <ul>
         @foreach ($books as $book)
             <li>
@@ -9,6 +17,8 @@
             </li>
         @endforeach
     </ul>
-
+    @endsection
 
 </div>
+
+

@@ -1,6 +1,13 @@
-<div>
-    <!-- Waste no more time arguing what a good man should be, be one. - Marcus Aurelius -->
+@extends('layouts.master')
+@section('title', 'Gestion Biblioteca - Add New Book')
+    @section('header')
     <h1>Add New Book</h1>
+    @endsection
+    @section('navigation')
+    <x-boton-enlace ruta="{{ route('books.index') }}">Books List</x-boton-enlace>
+    @parent
+    @endsection 
+    @section('content')
     <form action="{{ route('books.store') }}" method="POST">
         @csrf
         <label for="title">Title:</label>
@@ -24,4 +31,5 @@
         <br>
         <button type="submit">Add Book</button>
     </form>
-</div>
+
+    @endsection
